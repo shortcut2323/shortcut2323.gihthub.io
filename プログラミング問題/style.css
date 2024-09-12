@@ -1,0 +1,9 @@
+/* 選択肢のスタイル */
+.choice {
+    margin-bottom: 20px;
+  }
+  
+  .explanation, .hint {
+    font-size: 0.8em;
+    color: #888;
+  }

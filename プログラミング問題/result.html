@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>解答結果</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>解答結果</h1>
+    </header>
+    <main>
+        <h2>結果</h2>
+        <div id="result"></div>
+
+        <h3>問題の解説</h3>
+        <section class="explanation">
+            <h4>問題1: 足し算の関数</h4>
+            <p>正解: <strong>a + b</strong></p>
+            <p>解説: この関数は引数「a」と「b」を足し合わせて返すものです。</p>
+
+            <h4>問題2: ループの理解</h4>
+            <p>正解: <strong>i++</strong></p>
+            <p>解説: ループの条件式の部分で、インクリメント演算子「i++」を使ってiを1ずつ増加させる必要があります。</p>
+
+            <!-- 他の問題の解説もここに追加できます -->
+        </section>
+
+        <button onclick="goBack()">もう一度解答する</button>
+    </main>
+    <footer>
+        <p>&copy; 2024 プログラミング問題集</p>
+    </footer>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+
+        // クエリパラメータからデータを取得して結果を表示
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            let correctCount = 0;
+
+            const correctAnswers = {
+                q1: 'a + b',
+                q2: 'i++'
+            };
+
+            for (let question in correctAnswers) {
+                const userAnswer = urlParams.get(question);
+                if (userAnswer === correctAnswers[question]) {
+                    correctCount++;
+                }
+            }
+
+            document.getElementById('result').innerHTML = `<p>正解数: ${correctCount}/2</p>`;
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>オープンキャンパス特別イベント：プログラミング体験</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="quiz-container" class="quiz-container">
+        <h3>流通経済大学オープンキャンパス R6.9.14</h3>
+        <h1 id="quiz-title" class="animated-title">
+            <span>プ</span><span>ロ</span><span>グ</span><span>ラ</span><span>ミ</span><span>ン</span><span>グ</span><span>ク</span><span>イ</span><span>ズ</span>
+          </h1>          
+
+        <div id="question"></div>
+        <ul id="choices">
+            <li><button class="choice-btn" onclick="selectAnswer(0)">選択肢1</button></li>
+            <li><button class="choice-btn" onclick="selectAnswer(1)">選択肢2</button></li>
+            <li><button class="choice-btn" onclick="selectAnswer(2)">選択肢3</button></li>
+            <li><button class="choice-btn" onclick="selectAnswer(3)">選択肢4</button></li>
+        </ul>
+        <button id="hint-btn" onclick="showHint()">ヒント</button>
+        <div id="hint" class="hidden"></div>
+        <div id="score">現在のスコア: 0</div>
+    </div>
+
+    
+   <!-- ポップアップウィンドウ -->
+<div id="popup" class="popup">
+    <div class="popup-content">
+        <img id="popup-image" src="" alt="Image" class="popup-image">
+        <div id="popup-message" class="popup-message"></div>
+        <div id="popup-explanation" class="popup-explanation"></div>
+        <button id="next-question-btn" onclick="closePopupAndNextQuestion()">次の問題</button>
+    </div>
+</div>
+
+    <!-- 結果画面 -->
+    <div id="result-screen" class="hidden">
+        <div class="result-content">
+            <h2>クイズ終了</h2>
+            <p id="final-score">正解数: 0</p>
+            <p><div class="text"><span>クイズはお楽しみいただけましたか？</span></p></div>
+            キッチンカーで使える<div class="name"><p>300円分</p></div>のチケットを<br>プレゼントしています!
+            <p><span class="highlight">4階の踊り場（402教室付近）にいる<br>スタッフにこの画面を見せてください。</p></span>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

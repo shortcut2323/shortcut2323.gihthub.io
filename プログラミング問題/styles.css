@@ -1,0 +1,249 @@
+/* 基本的な設定 */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #e0f7fa; /* 明るい青緑色の背景 */
+    color: #000000; /* 黒い文字色 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* タイトル全体のスタイル */
+.animated-title {
+    font-size: 33px;
+    font-weight: bold;
+    color: #aa8f7b; /* 初期の文字色 */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* 各文字のアニメーションを順番に設定 */
+.animated-title span {
+    opacity: 0;
+    transform: translateY(20px);
+    display: inline-block;
+    animation: fadeInLetter 0.5s forwards;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* フェードインアニメーションの定義 */
+@keyframes fadeInLetter {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 文字ごとに異なるアニメーション開始タイミングを設定 */
+.animated-title span:nth-child(1) { animation-delay: 0s; }
+.animated-title span:nth-child(2) { animation-delay: 0.1s; }
+.animated-title span:nth-child(3) { animation-delay: 0.2s; }
+.animated-title span:nth-child(4) { animation-delay: 0.3s; }
+.animated-title span:nth-child(5) { animation-delay: 0.4s; }
+.animated-title span:nth-child(6) { animation-delay: 0.5s; }
+.animated-title span:nth-child(7) { animation-delay: 0.6s; }
+.animated-title span:nth-child(8) { animation-delay: 0.7s; }
+.animated-title span:nth-child(9) { animation-delay: 0.8s; }
+.animated-title span:nth-child(10) { animation-delay: 0.9s; }
+
+h3{
+    color: #00e1ff; /* 明るい青緑色 */
+    text-align: center;
+}
+
+.quiz-container {
+    background-color: #ffffff; /* 白い背景 */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.quiz-container:hover {
+    transform: scale(1.02);
+}
+
+#question {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #00796b; /* 明るい青緑色 */
+}
+
+#choices {
+    list-style-type: none;
+    padding: 0;
+}
+
+.choice-btn {
+    background-color: #81c784; /* 明るい緑色 */
+    color: #ffffff;
+    border: none;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.choice-btn:hover {
+    background-color: #66bb6a; /* ホバー時の緑色 */
+    box-shadow: 0 4px 12px rgba(102, 187, 106, 0.6);
+}
+
+#hint-btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #64b5f6; /* 明るい青色 */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+#hint-btn:hover {
+    background-color: #42a5f5; /* ホバー時の青色 */
+    box-shadow: 0 4px 12px rgba(66, 165, 245, 0.6);
+}
+
+#hint {
+    margin: 10px 0;
+    background-color: #b3e5fc; /* 明るい青色 */
+    padding: 10px;
+    border-radius: 5px;
+    color: #000000; /* 黒い文字色 */
+}
+
+#score {
+    font-size: 16px;
+    color: #00796b; /* 明るい青緑色 */
+}
+
+/* ポップアップウィンドウのスタイル */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none; /* 初期状態では非表示 */
+    justify-content: center;
+    align-items: center;
+}
+
+
+.popup-content {
+    background-color: #e5f5f7;
+    padding: 50px;
+    border-radius: 10px;
+    text-align: center;
+    width: 350px;
+    color: #000000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    position: relative; /* 画像を追加するために必要 */
+}
+
+.popup-message {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.correct-message {
+    color: #50fa7b; /* 緑色 */
+}
+
+.incorrect-message {
+    color: #ff5555; /* 赤色 */
+}
+
+.popup-content img {
+    max-width: 200px;
+    margin: 10px 0;
+}
+
+#next-question-btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #64b5f6; /* 明るい青色 */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+#next-question-btn:hover {
+    background-color: #42a5f5; /* ホバー時の青色 */
+    box-shadow: 0 4px 12px rgba(66, 165, 245, 0.6);
+}
+
+/* 結果画面のスタイル */
+.result-content {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 350px;
+    color: #333333;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.result-content h2 {
+    font-size: 24px;
+    color: #ff79c6;
+}
+
+.result-content p {
+    font-size: 18px;
+    color: #555555;
+}
+
+.hidden {
+    display: none;
+}
+
+.highlight {
+    background: linear-gradient(transparent 50%, #ffff66 0%);
+    line-height: 1.3em;
+}
+
+.text > span {
+    font-weight: bold;
+    border-bottom:5px double #00a1e9;
+  }
+
+  .name p {
+    font-size:50px;
+      margin:0px 0px 0px 10px;
+      color: #fff;
+      font-family: arno-pro,serif;
+      font-style: normal;
+      background-image: linear-gradient(
+      70deg,
+      rgb(211, 209, 209)  45%, 
+      #fff 50%,
+      rgb(211, 209, 209, 0.3) 55% 
+    );
+      background-size: 500% 100%;
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      animation: shine 2.5s infinite;
+  }
+  
+  @keyframes shine {
+    0% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
